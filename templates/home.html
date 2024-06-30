@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood Board Maker</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <link rel="stylesheet" href="https://pyscript.net/latest/pyscript.css">
+    <script defer src="https://pyscript.net/latest/pyscript.js"></script>
+    <script defer src="{{ url_for('static', filename='script.js') }}"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Welcome to Albumify!</h1>
+        <p>This simple webpage allows you to find your favorite album based on how often it appears in your playlists.</p>
+        <div id="playlist-container"></div>
+        <button id = "playlist-list">Get started</button>
+        <button id="logout-button">Logout</button>
+    </div>
+    
+    <py-script src="{{ url_for('static', filename='main.py') }}"></py-script>
+</body>
+</html>
