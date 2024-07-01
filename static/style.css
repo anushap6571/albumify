@@ -25,3 +25,7 @@ p {
     border-radius: 8px;
     text-align: center;
 }
+
+.playlist-list{
+    color: blue;
+}

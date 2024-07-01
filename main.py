@@ -51,10 +51,9 @@ def get_album():
             users_playlists.append(playlist)
 
     playlists_info = [(pl['name'], pl['external_urls']['spotify']) for pl in users_playlists]
-    playlists_html = '<br>'.join([f'{name}: <a href="{url}" target="_blank">{url}</a>' for name, url in playlists_info])
+   # playlists_html = '\n'+ ([f'{name}: {url}' for name, url in playlists_info])
+    return render_template('playlists-list.html', list = playlists_info)
     
-    
-    return playlists_html
 
 @app.route('/logout')
 def logout():

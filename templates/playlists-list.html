@@ -10,14 +10,17 @@
     <script defer src="{{ url_for('static', filename='script.js') }}"></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Welcome to Albumify!</h1>
-        <p>This simple webpage allows you to find your favorite album based on how often it appears in your playlists.</p>
-        <div id="playlist-container"></div>
-        <button id = "playlist-list">Get started</button>
-        <button id="logout-button">Logout</button>
+    <div class = "playlist-list">
+        <h1>Your Playlists</h1>
+        <ul>
+            {% for name, url in list %}
+                <li>{{ name }}: <a href="{{ url }}">{{ url }}</a></li>
+            {% endfor %}
+        </ul>
+        <a href="{{ url_for('home') }}">Go back to Home</a>
     </div>
-    
-    <py-script src="{{ url_for('static', filename='main.py') }}"></py-script>
+
 </body>
+
+
 </html>
