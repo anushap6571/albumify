@@ -40,10 +40,10 @@ def callback():
     sp_oauth.get_access_token(request.args['code'])
     return render_template('home.html')
  
-
-@app.route('/get_album')
-def get_album():
-    users_playlists = []
+users_playlists = []
+@app.route('/get_list')
+def get_list():
+    
     user_id = sp.current_user()['id']
     playlists = sp.current_user_playlists()
     for playlist in playlists['items']:
@@ -51,9 +51,19 @@ def get_album():
             users_playlists.append(playlist)
 
     playlists_info = [(pl['name'], pl['external_urls']['spotify']) for pl in users_playlists]
-   # playlists_html = '\n'+ ([f'{name}: {url}' for name, url in playlists_info])
     return render_template('playlists-list.html', list = playlists_info)
     
+@app.route('/get_album') 
+def get_album():
+    print("help")
+    # store album id of each track, find from a hashmap of all albums found, if not found
+    # insert in hashmap, else increment data of album 
+    track_map = {}
+    for playlist in users_playlists:
+        for track in playlist['track']:
+            album = track['album']
+             
+    return render_template('album.html')
 
 @app.route('/logout')
 def logout():

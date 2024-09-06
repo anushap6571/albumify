@@ -6,6 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
 document.addEventListener('DOMContentLoaded', function() {
     document.getElementById('playlist-list').addEventListener('click', function() {
-        window.location.href = '/get_album';
+        window.location.href = '/get_list';
     });
 });
